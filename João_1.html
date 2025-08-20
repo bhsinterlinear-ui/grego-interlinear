@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>João 1 - Intelinear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+      color: purple;
+      font-weight: bold;
+      margin-bottom: 24px;
+      font-size: 1.6em;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .coluna {
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .coluna.grego {
+      width: 40%;
+      direction: ltr;
+      text-align: right;
+      font-size: 1.2em;
+      line-height: 1.6em;
+    }
+
+    .coluna.c2 {
+      width: 60%;
+    }
+
+    .versiculo {
+      display: flex;
+      margin-bottom: 12px;
+    }
+
+    .texto-grego {
+      width: 100%;
+      padding-right: 10px;
+    }
+
+    .texto-traducao {
+      width: 100%;
+    }
+
+    .grade {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .celula {
+      display: inline-block;
+      vertical-align: top;
+      margin: 4px;
+      padding: 2px;
+      box-sizing: border-box;
+    }
+
+    .linha1 {
+      color: blue;
+      font-style: italic;
+      font-size: 0.9em;
+    }
+
+    .linha2 {
+      color: black;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .linha3 {
+      color: purple;
+    }
+
+    .numero {
+      color: red;
+      font-weight: bold;
+    }
+
+    .grego span,
+    .c2 span {
+      cursor: pointer;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: row;
+      }
+
+      .coluna.grego {
+        width: 30%;
+      }
+
+      .coluna.c2 {
+        width: 70%;
+      }
+
+      .celula {
+        width: 100px;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <h1>Escrituras Gregas - [Nestle 1904] Interlinear</h1>
+
+  <h2>João 1</h2>
+  <div class="container">
+    <div class="coluna grego" id="coluna1">
+      <div class="versiculo">
+        <div class="texto-grego">
+          <p>
+		<span class="numero">1 </span><span data-id="Ἐν">Ἐν</span>
+		<span data-id="ἀρχῇ">ἀρχῇ</span>
+		<span data-id="ἦν">ἦν</span>
+		<span data-id="ὁ">ὁ</span>
+		<span data-id="Λόγος">Λόγος,</span>
+		<span data-id="καὶ">καὶ</span>
+		<span data-id="ὁ">ὁ</span>
+		<span data-id="Λόγος">Λόγος</span>
+		<span data-id="ἦν">ἦν</span>
+		<span data-id="πρὸς">πρὸς</span>
+		<span data-id="τὸν">τὸν</span>
+		<span data-id="Θεόν">Θεόν</span>
+		<span data-id="καὶ">καὶ</span>
+		<span data-id="Θεόν">Θεὸς</span>
+		<span data-id="ἦν">ἦν</span>
+		<span data-id="ὁ">ὁ</span>
+		<span data-id="Λόγος">Λόγος.</span>
+        <span class="numero">2 </span><span data-id="Οὗτος">Οὗτος</span>
+		<span data-id="ἦν">ἦν</span>
+		<span data-id="ἐν">ἐν</span>
+		<span data-id="ἀρχῇ">ἀρχῇ</span>
+		<span data-id="πρὸς">πρὸς</span>
+		<span data-id="τὸν">τὸν</span>
+		<span data-id="Θεόν">Θεόν</span>
+		<span class="numero">3 </span><span data-id="πάντα">πάντα</span>
+		<span data-id="δι’">δι’</span>
+		<span data-id="αὐτοῦ">αὐτοῦ</span>
+		<span data-id="ἐγένετο">ἐγένετο</span>
+		<span data-id="καὶ">καὶ</span>
+		<span data-id="χωρὶς">χωρὶς</span>
+		<span data-id="αὐτοῦ">αὐτοῦ</span>
+		<span data-id="ἐγένετο">ἐγένετο</span>
+		<span data-id="οὐδὲ">οὐδὲ</span>
+		<span data-id="ἕν">ἕν</span>
+		<span data-id="ὃ">ὃ</span>
+		<span data-id="γέγονεν">γέγονεν</span>
+		<span class="numero">4 </span><span data-id="ἐν">ἐν</span>
+		<span data-id="αὐτῷ">αὐτῷ</span>
+		<span data-id="ζωὴ">ζωὴ</span>
+		<span data-id="ἦν">ἦν</span>
+		<span data-id="καὶ">καὶ</span>
+		<span data-id="ἡ">ἡ</span>
+		<span data-id="ζωὴ">ζωὴ</span>
+		<span data-id="ἦν">ἦν</span>
+		<span data-id="τὸ">τὸ</span>
+		<span data-id="φῶς">φῶς</span>
+		<span data-id="τῶν">τῶν</span>
+		<span data-id="ἀνθρώπων">ἀνθρώπων</span>
+		<span class="numero">5 </span><span data-id="καὶ">καὶ</span>
+		<span data-id="τὸ">τὸ</span>
+		<span data-id="φῶς">φῶς</span>
+		<span data-id="ἐν">ἐν</span>
+		<span data-id="τῇ">τῇ</span>
+		<span data-id="σκοτία">σκοτίᾳ</span>
+        <span data-id="φαίνει">φαίνει</span>
+        <span data-id="καὶ">καὶ</span>
+        <span data-id="ἡ">ἡ</span>
+        <span data-id="σκοτία">σκοτία</span>
+		<span data-id="αὐτοῦ">αὐτὸ</span>
+		<span data-id="οὐ">οὐ</span>
+		<span data-id="κατέλαβεν">κατέλαβεν</span>
+			</p>
+		<span class="numero">6 </span><span data-id="Ἐγένετο">Ἐγένετο</span>
+		<span data-id="ἄνθρωπος">ἄνθρωπος,</span>
+		<span data-id="ἀπεσταλμένος">ἀπεσταλμένος</span>
+		<span data-id="παρὰ">παρὰ</span>
+		<span data-id="Θεόν">Θεοῦ,</span>
+		<span data-id="ὄνομα">ὄνομα</span>
+		<span data-id="αὐτοῦ">αὐτῷ</span>
+		<span data-id="Ἰωάνης">Ἰωάνης·</span>
+		<span class="numero">7 </span><span data-id="οὗτος">οὗτος</span>
+		<span data-id="ἦλθεν">ἦλθεν</span>
+		<span data-id="εἰς">εἰς</span>
+		<span data-id="μαρτυρίαν">μαρτυρίαν,</span>
+		<span data-id="ἵνα">ἵνα</span>
+		<span data-id="μαρτυρήσῃ">μαρτυρήσῃ</span>
+		<span data-id="περὶ">περὶ</span>
+		<span data-id="τοῦ">τοῦ</span>
+		<span data-id="φωτός">φωτός,</span>
+		<span data-id="ἵνα">ἵνα</span>
+		<span data-id="πάντες">πάντες</span>
+		<span data-id="πιστεύσωσιν">πιστεύσωσιν</span>
+		<span data-id="δι’">δι’</span>
+		<span data-id="αὐτοῦ">αὐτοῦ.</span>
+			</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="coluna c2" id="coluna2">
+      <div class="versiculo">
+        <div class="texto-traducao">
+          <div class="grade">
+            <div class="celula">
+               <div class="linha1">en 1722</div>
+              <div class="linha2"><span data-id="Ἐν">Ἐν</span></div>
+              <div class="linha3"><span class="numero">1 </span>No</div>
+            </div>
+            <div class="celula">
+              <div class="linha1">archē 746</div>
+              <div class="linha2"><span data-id="ἀρχῇ">ἀρχῇ</span></div>
+              <div class="linha3">princípio</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ēn 1510</div>
+              <div class="linha2"><span data-id="ἦν">ἦν</span></div>
+              <div class="linha3">era</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ho 3588</div>
+              <div class="linha2"><span data-id="ὁ">ὁ</span></div>
+              <div class="linha3">a</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">logos 3056</div>
+              <div class="linha2"><span data-id="Λόγος">Λόγος,</span></div>
+              <div class="linha3">palavra,</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">kai 2532</div>
+              <div class="linha2"><span data-id="καὶ">καὶ</span></div>
+              <div class="linha3">e</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ho 3588</div>
+              <div class="linha2"><span data-id="ὁ">ὁ</span></div>
+              <div class="linha3">a</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">logos 3056</div>
+              <div class="linha2"><span data-id="Λόγος">Λόγος</span></div>
+              <div class="linha3">palavra</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ēn 1510</div>
+              <div class="linha2"><span data-id="ἦν">ἦν</span></div>
+              <div class="linha3">estava</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">pros 4314</div>
+              <div class="linha2"><span data-id="πρὸς">πρὸς</span></div>
+              <div class="linha3">com</div>
+            </div>
+            <div class="celula">
+              <div class="linha1">ton 3588</div>
+              <div class="linha2"><span data-id="τὸν">τὸν</span></div>
+              <div class="linha3">o</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">theon 2316</div>
+              <div class="linha2"><span data-id="Θεόν">Θεόν,</span></div>
+              <div class="linha3">Deus,</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">kai 2532</div>
+              <div class="linha2"><span data-id="καὶ">καὶ</span></div>
+              <div class="linha3">e</div>
+		</div>
+ <style>
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-icon {
+    color: #0077cc;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 1.1em;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 320px;
+    background-color: #fdfdfd;
+    color: #333;
+    text-align: left;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    z-index: 10;
+    top: 130%;  /* Agora a caixa aparece abaixo do ícone */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8em;  /* Texto menor */
+    line-height: 1.3em;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltiptext::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;  /* Seta na parte de cima da caixa */
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #ccc transparent;
+}
+
+.tooltip .tooltiptext a {
+    color: #0077cc;
+    text-decoration: underline;
+    word-break: break-word;
+}
+</style>
+
+<div class="celula">
+    <div class="linha1">theos 2316</div>
+    <div class="linha2"><span data-id="Θεόν">Θεὸς</span></div>
+    <div class="linha3">
+        deus
+        <span class="tooltip">
+            <span class="tooltip-icon">*</span>
+            <div class="tooltiptext">
+                Aqui em João 1:1, a palavra <strong>Teos</strong> [Θεός] é diferente das demais; nos versículos 1 e 2, apenas as duas ocorrências de <strong>ton Teon</strong> [τὸν Θεόν] (com o artigo definido τὸν) se referem ao Deus Todo-Poderoso (Teon Θεόν).<br>
+                Compare com as versões em inglês:<br>Diaglott 
+                <a href="https://studybible.info/Diaglott/John%201:1" target="_blank" rel="noopener noreferrer">
+                    https://studybible.info/Diaglott/John%201:1
+					</a>
+					<br>
+					Moffatt 
+                <a href="https://studybible.info/Moffatt/John%201:1" target="_blank" rel="noopener noreferrer">
+                    https://studybible.info/Moffatt/John%201:1
+				 </a>
+				<br> 
+				Goodspeed 
+                <a href="https://studybible.info/Goodspeed/John%201:1" target="_blank" rel="noopener noreferrer">
+                    https://studybible.info/Goodspeed/John%201:1
+</a>
+            </div>
+        </span>
+    </div>
+</div>
+
+            <div class="celula">
+              <div class="linha1">ēn 1510</div>
+              <div class="linha2"><span data-id="ἦν">ἦν</span></div>
+              <div class="linha3">era</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ho 3588</div>
+              <div class="linha2"><span data-id="ὁ">ὁ</span></div>
+              <div class="linha3">a</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">logos 3056</div>
+              <div class="linha2"><span data-id="Λόγος">Λόγος</span></div>
+              <div class="linha3">palavra.</div>
+		</div>
+            <div class="grade">
+            <div class="celula">
+              <div class="linha1">houtos 3778</div>
+              <div class="linha2"><span data-id="Οὗτος">Οὗτος</span></div>
+              <div class="linha3"><span class="numero">2 </span>Ele</div>
+            </div>
+            <div class="celula">
+              <div class="linha1">ēn 1510</div>
+              <div class="linha2"><span data-id="ἦν">ἦν</span></div>
+              <div class="linha3">estava</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">en 1722</div>
+              <div class="linha2"><span data-id="ἐν">ἐν</span></div>
+              <div class="linha3">no</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">archē 746</div>
+              <div class="linha2"><span data-id="ἀρχῇ">ἀρχῇ</span></div>
+              <div class="linha3">princípio</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">pros 4314</div>
+              <div class="linha2"><span data-id="πρὸς">πρὸς</span></div>
+              <div class="linha3">com</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ton 3588</div>
+              <div class="linha2"><span data-id="τὸν">τὸν</span></div>
+              <div class="linha3">o</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">theon 2316</div>
+              <div class="linha2"><span data-id="Θεόν">Θεόν.</span></div>
+              <div class="linha3">Deus.</div>
+		</div>
+            <div class="grade">
+            <div class="celula">
+              <div class="linha1">panta 3956</div>
+              <div class="linha2"><span data-id="πάντα">πάντα</span></div>
+              <div class="linha3"><span class="numero">3 </span>Tudo</div>
+            </div>
+            <div class="celula">
+              <div class="linha1">di 1223</div>
+              <div class="linha2"><span data-id="δι’">δι’</span></div>
+              <div class="linha3">por</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">autou 846</div>
+              <div class="linha2"><span data-id="αὐτοῦ">αὐτοῦ</span></div>
+              <div class="linha3">ele</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">egeneto 1096</div>
+              <div class="linha2"><span data-id="ἐγένετο">ἐγένετο</span></div>
+              <div class="linha3">foi feito,</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">kai 2532</div>
+              <div class="linha2"><span data-id="καὶ">καὶ</span></div>
+              <div class="linha3">e</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">chōris 5565</div>
+              <div class="linha2"><span data-id="χωρὶς">χωρὶς</span></div>
+              <div class="linha3">sem</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">autou 846</div>
+              <div class="linha2"><span data-id="αὐτοῦ">αὐτοῦ</span></div>
+              <div class="linha3">ele</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">egeneto 1096</div>
+              <div class="linha2"><span data-id="ἐγένετο">ἐγένετο</span></div>
+              <div class="linha3">foi feito</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">oude 3761</div>
+              <div class="linha2"><span data-id="οὐδὲ">οὐδὲ</span></div>
+              <div class="linha3">nada.</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">hen 1520</div>
+              <div class="linha2"><span data-id="ἕν">ἕν</span></div>
+              <div class="linha3">O</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ho 3739</div>
+              <div class="linha2"><span data-id="ὃ">ὃ</span></div>
+              <div class="linha3">que</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">gegonen 1096</div>
+              <div class="linha2"><span data-id="γέγονεν">γέγονεν</span></div>
+              <div class="linha3">veio a existir</div>
+		</div>
+			  <div class="celula">
+              <div class="linha1">en 1722</div>
+              <div class="linha2"><span data-id="ἐν">ἐν</span></div>
+              <div class="linha3"><span class="numero">4 </span>por</div>
+            </div>
+			<div class="celula">
+              <div class="linha1">autō 846</div>
+              <div class="linha2"><span data-id="αὐτῷ">αὐτῷ</span></div>
+              <div class="linha3">ele</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">zōē 2222</div>
+              <div class="linha2"><span data-id="ζωὴ">ζωὴ</span></div>
+              <div class="linha3">[a]vida</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ēn 1510</div>
+              <div class="linha2"><span data-id="ἦν">ἦν</span></div>
+              <div class="linha3">foi,</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">kai 2532</div>
+              <div class="linha2"><span data-id="καὶ">καὶ</span></div>
+              <div class="linha3">e</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">hē 3588</div>
+              <div class="linha2"><span data-id="ἡ">ἡ</span></div>
+              <div class="linha3">a</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">zōē 2222</div>
+              <div class="linha2"><span data-id="ζωὴ">ζωὴ</span></div>
+              <div class="linha3">vida</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ēn 1510</div>
+              <div class="linha2"><span data-id="ἦν">ἦν</span></div>
+              <div class="linha3">era</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">to 3588</div>
+              <div class="linha2"><span data-id="τὸ">τὸ</span></div>
+              <div class="linha3">a</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">phōs 5457</div>
+              <div class="linha2"><span data-id="φῶς">φῶς</span></div>
+              <div class="linha3">luz</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">tōn 3588</div>
+              <div class="linha2"><span data-id="τῶν">τῶν</span></div>
+              <div class="linha3">dos</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">anthrōpōn 444</div>
+              <div class="linha2"><span data-id="ἀνθρώπων">ἀνθρώπων</span></div>
+              <div class="linha3">homens.</div>
+</div>
+	    <div class="grade">
+            <div class="celula">
+              <div class="linha1">kai 2532</div>
+              <div class="linha2"><span data-id="καὶ">καὶ</span></div>
+              <div class="linha3"><span class="numero">5 </span>E</div>
+            </div>
+            <div class="celula">
+              <div class="linha1">to 3588</div>
+              <div class="linha2"><span data-id="τὸ">τὸ</span></div>
+              <div class="linha3">a</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">phōs 5457</div>
+              <div class="linha2"><span data-id="φῶς">φῶς</span></div>
+              <div class="linha3">luz</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">en 1722</div>
+              <div class="linha2"><span data-id="ἐν">ἐν</span></div>
+              <div class="linha3">em</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">tē 3588</div>
+              <div class="linha2"><span data-id="τῇ">τῇ</span></div>
+              <div class="linha3">a</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">skotia 4653</div>
+               <div class="linha2"><span data-id="σκοτία">σκοτίᾳ</span></div>
+              <div class="linha3">[na] escuridão</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">phainei 5316</div>
+              <div class="linha2"><span data-id="φαίνει">φαίνει</span></div>
+              <div class="linha3">brilha;</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">kai 2532</div>
+              <div class="linha2"><span data-id="καὶ">καὶ</span></div>
+              <div class="linha3">e</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">hē 3588</div>
+              <div class="linha2"><span data-id="ἡ">ἡ</span></div>
+              <div class="linha3">a</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">skotia 4653</div>
+              <div class="linha2"><span data-id="σκοτία">σκοτία</span></div>
+              <div class="linha3">escuridão,</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">auto 846</div>
+              <div class="linha2"><span data-id="αὐτοῦ">αὐτὸ</span></div>
+              <div class="linha3">esta</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">ou 3756</div>
+              <div class="linha2"><span data-id="οὐ">οὐ</span></div>
+              <div class="linha3">não</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">katelaben 2638</div>
+              <div class="linha2"><span data-id="κατέλαβεν">κατέλαβεν</span></div>
+              <div class="linha3">venceu.</div>
+		</div>
+		</div>
+ </div>
+	    <div class="grade">
+            <div class="celula">
+              <div class="linha1">egeneto 1096</div>
+              <div class="linha2"><span data-id="Ἐγένετο">Ἐγένετο</span></div>
+              <div class="linha3"><span class="numero">6 </span>Surgiu</div>
+            </div>
+            <div class="celula">
+              <div class="linha1">anthrōpos 444</div>
+              <div class="linha2"><span data-id="ἄνθρωπος">ἄνθρωπος,</span></div>
+              <div class="linha3">[um] homem</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">apestalmenos 649</div>
+              <div class="linha2"><span data-id="ἀπεσταλμένος">ἀπεσταλμένος</span></div>
+              <div class="linha3">enviado</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">para 3844</div>
+              <div class="linha2"><span data-id="παρὰ">παρὰ</span></div>
+              <div class="linha3">por</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">theou 2316</div>
+              <div class="linha2"><span data-id="Θεόν">Θεοῦ,</span></div>
+              <div class="linha3">Deus.</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">onoma 3686</div>
+              <div class="linha2"><span data-id="ὄνομα">ὄνομα</span></div>
+              <div class="linha3">[O] nome</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">autō 846</div>
+              <div class="linha2"><span data-id="αὐτοῦ">αὐτῷ</span></div>
+              <div class="linha3">dele:</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">iōanēs 2491</div>
+              <div class="linha2"><span data-id="Ἰωάνης">Ἰωάνης·</span></div>
+              <div class="linha3">João.</div>
+		</div>
+		</div>
+	    <div class="grade">
+            <div class="celula">
+              <div class="linha1">houtos 3778</div>
+              <div class="linha2"><span data-id="οὗτος">οὗτος</span></div>
+              <div class="linha3"><span class="numero">7 </span>Ele</div>
+            </div>
+            <div class="celula">
+              <div class="linha1">ēlthen 2064</div>
+              <div class="linha2"><span data-id="ἦλθεν">ἦλθεν</span></div>
+              <div class="linha3">veio</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">eis 1519</div>
+              <div class="linha2"><span data-id="εἰς">εἰς</span></div>
+              <div class="linha3">como</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">martyrian 3141</div>
+              <div class="linha2"><span data-id="μαρτυρίαν">μαρτυρίαν,</span></div>
+              <div class="linha3">testemunha,</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">hina 2443</div>
+              <div class="linha2"><span data-id="ἵνα">ἵνα</span></div>
+              <div class="linha3">para</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">martyrēsē 3140</div>
+              <div class="linha2"><span data-id="μαρτυρήσῃ">μαρτυρήσῃ</span></div>
+              <div class="linha3">testemunhar</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">peri 4012</div>
+              <div class="linha2"><span data-id="περὶ">περὶ</span></div>
+              <div class="linha3">sobre</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">tou 3588</div>
+              <div class="linha2"><span data-id="τοῦ">τοῦ</span></div>
+              <div class="linha3">a</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">phōtos 5457</div>
+              <div class="linha2"><span data-id="φωτός">φωτός,</span></div>
+              <div class="linha3">luz,</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">hina 2443</div>
+              <div class="linha2"><span data-id="ἵνα">ἵνα</span></div>
+              <div class="linha3">para</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">pantes 3956</div>
+              <div class="linha2"><span data-id="πάντες">πάντες</span></div>
+              <div class="linha3">todos</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">pisteusōsin 4100</div>
+              <div class="linha2"><span data-id="πιστεύσωσιν">πιστεύσωσιν</span></div>
+              <div class="linha3">acreditarem</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">di 1223</div>
+              <div class="linha2"><span data-id="δι’">δι’</span></div>
+              <div class="linha3">mediante</div>
+		</div>
+            <div class="celula">
+              <div class="linha1">autou 846</div>
+              <div class="linha2"><span data-id="αὐτοῦ">αὐτοῦ.</span></div>
+              <div class="linha3">ele.</div>
+		</div>
+      </div>
+
+    </div>
+  </div>
+
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const spans = document.querySelectorAll("span[data-id]");
+
+    spans.forEach(span => {
+      span.addEventListener("mouseenter", () => {
+        const id = span.getAttribute("data-id");
+        const allMatching = document.querySelectorAll(`span[data-id="${id}"]`);
+        allMatching.forEach(el => el.classList.add("highlight"));
+      });
+
+      span.addEventListener("mouseleave", () => {
+        const id = span.getAttribute("data-id");
+        const allMatching = document.querySelectorAll(`span[data-id="${id}"]`);
+        allMatching.forEach(el => el.classList.remove("highlight"));
+      });
+    });
+  });
+</script>
+<script>
+  // Transforma número Strong em link para o BibleHub
+  document.querySelectorAll('.linha1').forEach(el => {
+    const match = el.textContent.match(/(.*?)(\d{3,5})$/); // captura texto + número ao final
+    if (match) {
+      const texto = match[1].trim();
+      const numero = match[2];
+      el.innerHTML = `${texto} <a href="https://biblehub.com/greek/${numero}.htm" target="_blank">${numero}</a>`;
+    }
+  });
+</script>
+</body>
+</html>
