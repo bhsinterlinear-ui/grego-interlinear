@@ -758,89 +758,15 @@
   });
 </script>
 <script>
-  // Transforma número Strong em link para o grego-interlinear
+  // Transforma número Strong em link para o grego-interlinear com tooltip
   document.querySelectorAll('.linha1').forEach(el => {
     const match = el.textContent.match(/(.*?)(\d{3,5})$/); // captura texto + número ao final
     if (match) {
       const texto = match[1].trim();
       const numero = match[2];
-      el.innerHTML = `${texto} <a href="https://grego-interlinear.netlify.app/g${numero}" target="_blank">${numero}</a>`;
-    }
-  });
-</script>
-<style>
-.tooltip {
-  position: absolute;
-  background: #fff;
-  border: 1px solid #999;
-  border-radius: 8px;
-  padding: 8px;
-  max-width: 300px;
-  font-size: 14px;
-  line-height: 1.4;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
-  display: none;
-  z-index: 1000;
-}
-</style>
-
-<div id="tooltip" class="tooltip"></div>
-
-<script>
-  const tooltip = document.getElementById('tooltip');
-
-  document.querySelectorAll('.linha1').forEach(el => {
-    const match = el.textContent.match(/(.*?)(\d{3,5})$/);
-    if (match) {
-      const texto = match[1].trim();
-      const numero = match[2];
-      const url = `https://grego-interlinear.netlify.app/g${numero}`;
-
-      el.innerHTML = `${texto} <a href="${url}" target="_blank" class="strong-link" data-url="${url}">${numero}</a>`;
-    }
-  });
-
-  // Função para mostrar tooltip
-  async function showTooltip(e, url) {
-    tooltip.style.display = 'block';
-    tooltip.style.top = (e.pageY + 15) + 'px';
-    tooltip.style.left = (e.pageX + 15) + 'px';
-    tooltip.innerHTML = 'Carregando...';
-
-    try {
-      const res = await fetch(url);
-      const html = await res.text();
-      // cria um parser temporário
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-
-      // pega os dois primeiros parágrafos
-      const paragraphs = [...doc.querySelectorAll('p')].slice(0,2).map(p => p.textContent.trim());
-      tooltip.innerHTML = paragraphs.join('<br><br>') || 'Conteúdo não disponível.';
-    } catch {
-      tooltip.innerHTML = 'Erro ao carregar prévia.';
-    }
-  }
-
-  // eventos de mouse
-  document.addEventListener('mouseover', e => {
-    const link = e.target.closest('.strong-link');
-    if (link) {
-      showTooltip(e, link.dataset.url);
-    }
-  });
-
-  document.addEventListener('mousemove', e => {
-    if (tooltip.style.display === 'block') {
-      tooltip.style.top = (e.pageY + 15) + 'px';
-      tooltip.style.left = (e.pageX + 15) + 'px';
-    }
-  });
-
-  document.addEventListener('mouseout', e => {
-    const link = e.target.closest('.strong-link');
-    if (link) {
-      tooltip.style.display = 'none';
+      el.innerHTML = `${texto} <a href="https://grego-interlinear.netlify.app/g${numero}" 
+                         target="_blank" 
+                         title="Abrir g${numero} no grego-interlinear">${numero}</a>`;
     }
   });
 </script>
@@ -848,6 +774,7 @@
 
 </body>
 </html>
+
 
 
 
