@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<title>Concordância Integrada da Bíblia</title>
+<style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 2em;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+        .entry {
+            margin-bottom: 2em;
+            padding: 1em;
+            border-left: 4px solid #888;
+            background-color: #fff;
+        }
+        .strong-number {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .term {
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        .occurrences {
+            margin-top: 0.5em;
+            font-size: 0.95em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<style>
+  .highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
+</style>
+<header>
+<h1>Concordância Integrada da Bíblia</h1>
+</header>
+<main>
+<div class="entry" id="G3">
+<span class="strong-number">G3 Αβαδδων</span>
+<span class="term"> (Abaddon)</span> Abadon; de origem hebraica; <a href="H11.html">[H11]</a>; destruidor
+<p><span class="term">Os links na lista de ocorrências abrem na versão "Nestle 1904" (texto padrão em grego).</span></p>
+
+<!-- Caixa de busca -->
+<div id="navegacao-topo">
+  <input id="searchBox" placeholder="Buscar nas ocorrências" type="text"/>
+</div>
+</div>
+</main>
+</p>
+<strong> 1 ocorrência:</strong></p>
+
+    <div class="occurrences">
+<a href="https://biblebento.com/index.html?nestle1904&730.1.11" target="_blank">Apocalipse 1:11</a>.
+
+</div>
+  </div>
+<header>
+<div class="lista-links" id="lista-strongs">
+    <a href="G2.html">⮜ Anterior</a>
+	<a href="CIB-Grego.html">Início</a>
+    <a href="G4.html">Próximo ⮞</a>
+	<header>
+</div>
+
+</main>
+<style>
+#btn-topo {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 0.6em 1em;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 10px;
+  z-index: 999;
+}
+<style>
+  /* Destaque dos termos encontrados */
+  mark { background: yellow; padding: 0 .1em; }
+</style>
+
+<script>
+(function(){
+  const searchInput = document.getElementById('searchBox');
+  const occContainer = document.querySelector('#lista-citacoes') || document.querySelector('.occurrences');
+
+  if (!occContainer || !searchInput) return;
+
+  // Coleta todas as citações existentes (antes de reestruturar o HTML)
+  const links = Array.from(occContainer.querySelectorAll('a'));
+  const citations = links.map(a => ({
+    href: a.getAttribute('href'),
+    text: a.textContent.trim()
+  }));
+
+  // Reconstrói o bloco para controle total da renderização
+  occContainer.innerHTML = '<strong id="occ-count"></strong> <div id="citacoes-list"></div>';
+  const countEl = occContainer.querySelector('#occ-count');
+  const listEl  = occContainer.querySelector('#citacoes-list');
+
+  // Utilidades
+  const escapeRegExp = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  function highlight(text, query){
+    if (!query) return text;
+    let html = text;
+    const terms = [...new Set(query.trim().split(/\s+/).filter(Boolean))];
+    terms.forEach(t => {
+      const re = new RegExp('(' + escapeRegExp(t) + ')', 'gi');
+      html = html.replace(re, '<mark>$1</mark>');
+    });
+    return html;
+  }
+
+  function filterCitations(query){
+    if (!query) return citations;
+    const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    return citations.filter(c => {
+      const hay = (c.text + ' ' + c.href).toLowerCase();
+      return terms.every(t => hay.includes(t));
+    });
+  }
+
+  function render(list, query){
+    // Atualiza contador
+    const n = list.length;
+   
+
+    // Renderiza apenas os itens filtrados, já com destaque
+    listEl.innerHTML = '';
+    const frag = document.createDocumentFragment();
+    list.forEach((c, i) => {
+      const a = document.createElement('a');
+      a.href = c.href;
+      a.target = '_blank';
+      a.innerHTML = highlight(c.text, query);
+      frag.appendChild(a);
+      if (i < list.length - 1) frag.appendChild(document.createTextNode('; '));
+    });
+    listEl.appendChild(frag);
+  }
+
+  function onInput(){
+    const q = searchInput.value;
+    const filtered = filterCitations(q);
+    render(filtered, q);
+  }
+
+  // Inicialização
+  render(citations, '');
+  searchInput.addEventListener('input', onInput);
+})();
+</script>
+<button id="btn-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Início</button>
+</body>
+</html>
