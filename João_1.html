@@ -768,7 +768,21 @@
     }
   });
 </script>
+<script>
+  // Transforma número Strong em link para o grego-interlinear com tooltip
+  document.querySelectorAll('.linha1').forEach(el => {
+    const match = el.textContent.match(/(.*?)(\d{3,5})$/); // captura texto + número ao final
+    if (match) {
+      const texto = match[1].trim();
+      const numero = match[2];
+      el.innerHTML = `${texto} <a href="https://grego-interlinear.netlify.app/g${numero}" 
+                         target="_blank" 
+                         title="Abrir g${numero} no grego-interlinear">${numero}</a>`;
+    }
+  });
+</script>
 
 </body>
 </html>
+
 
